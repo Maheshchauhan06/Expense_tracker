@@ -10,8 +10,7 @@ export const signUpValidation = Yup.object({
     .required("Please enter password")
     .min(3, "to weak")
     .max(8, "to long"),
-  confirmPassword: Yup.string().oneOf(
-    [Yup.ref("password")],
-    "Password not matched"
-  ),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("password")], "Password not matched")
+    .required("Please enter your password"),
 });

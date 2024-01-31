@@ -1,0 +1,27 @@
+.primaryBtn {
+  min-width: 5rem;
+  width: fit-content;
+  height: 2.8rem;
+  background: var(--app-primary-btn-color);
+  color: var(--app-text-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: Roboto Medium;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.primaryBtn:disabled {
+  background-color: var(--app-disable-mute-gray);
+  color: var(--app-btn-text);
+  opacity: 0.8 !important;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  background-color: var(--app-btn-hover);
+}
+
+.primaryBtn:focus {
+  outline: 0;
+  box-shadow: none;
+}

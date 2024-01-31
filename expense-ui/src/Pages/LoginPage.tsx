@@ -2,6 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import { signUpValidation } from "../Services/Schema";
 import "./LoginPage.css";
+import Buttons from "../Components/Buttons/Buttons";
 
 interface MyFormValues {
   fullName: string;
@@ -45,7 +46,7 @@ const LoginPage: React.FC = () => {
     confirmPassword: "",
   };
 
-  const formik = useFormik({
+  const formic = useFormik({
     initialValues: loginForm,
     validationSchema: signUpValidation,
     onSubmit: (values) => {
@@ -55,31 +56,31 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="login-page-container">
-      <form className="form-container" onSubmit={formik.handleSubmit}>
-        <h5 className="login-form-title">Login Form</h5>
+      <form className="form-container" onSubmit={formic.handleSubmit}>
+        <h5 className="login-form-title">Sign Up Form</h5>
 
         {loginFormObj.map((form, index) => (
           <div className="form-field" key={index}>
-            <label htmlFor={form.name}>{form.label}:</label>
+            <label htmlFor={form.name}>{form.label} </label>
             <input
               type={form.type}
               id={form.name}
               name={form.name}
               placeholder={form.placeholder}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values[form.name as keyof MyFormValues]}
+              onChange={formic.handleChange}
+              onBlur={formic.handleBlur}
+              value={formic.values[form.name as keyof MyFormValues]}
             />
-            {formik.touched[form.name as keyof MyFormValues] &&
-              formik.errors[form.name as keyof MyFormValues] && (
+            {formic.touched[form.name as keyof MyFormValues] &&
+              formic.errors[form.name as keyof MyFormValues] && (
                 <div className="error-msg">
-                  {formik.errors[form.name as keyof MyFormValues]}
+                  {formic.errors[form.name as keyof MyFormValues]}
                 </div>
               )}
           </div>
         ))}
 
-        <button type="submit">Submit</button>
+        <Buttons label="Submit" type="submit" />
       </form>
     </div>
   );
