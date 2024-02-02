@@ -1,0 +1,39 @@
+.Modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: var(--app-modal-background);
+  border-radius: inherit;
+  overflow-y: scroll;
+}
+
+.Modal {
+  padding: 1.2rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: max-content;
+  /* max-height: 90%; */
+  height: max-content;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  background-color: var(--app-white);
+  border-radius: 0.4rem;
+}
+
+/* scroll  css */
+.Modal::-webkit-scrollbar {
+  width: 0.2rem;
+  border-radius: 1rem;
+}
+
+.Modal::-webkit-scrollbar-track {
+  background: var(--light-grey);
+}
+
+.Modal::-webkit-scrollbar-thumb {
+  background: var(--app-input-border);
+}
