@@ -1,0 +1,36 @@
+.card-container {
+  width: 100%;
+  height: fit-content;
+  max-width: 20rem;
+  max-height: 18rem;
+  background: var(--app-white-background);
+  border-radius: 1rem;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container > div {
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-container > div > h6 {
+  font-family: Roboto Normal;
+  background: var(--app-disable-mute-gray);
+  padding: 0.4rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.card-container > div > h5 {
+  font-family: Roboto Normal;
+}
+
+.card-container > p {
+  font-size: 0.7rem;
+  font-family: Roboto Medium;
+  display: flex;
+  justify-content: flex-end;
+}
